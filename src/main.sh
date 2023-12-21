@@ -87,6 +87,7 @@ function main {
   case "${stlSubcommand}" in
   fmt)
     installSentinel
+    export -f sentinelFmt
     find . -type f *.sentinel | xargs sentinelFmt
     ;;
   test)
