@@ -87,7 +87,10 @@ function main {
   case "${stlSubcommand}" in
   fmt)
     installSentinel
-    find . -type f -name "*.sentinel" | xargs sentinelFmt
+    fileList=$(find . -type f -name "*.sentinel")
+    for f in $fileList; do
+      sentinelFmt "$f"
+    done
     ;;
   test)
     installSentinel
