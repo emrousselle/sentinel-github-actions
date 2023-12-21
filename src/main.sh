@@ -76,6 +76,7 @@ function installSentinel {
 }
 
 function main {
+  echo "ARGS: ${*}"
   # Source the other files to gain access to their functions
   scriptDir=$(dirname ${0})
   source ${scriptDir}/sentinel_fmt.sh
