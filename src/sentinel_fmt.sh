@@ -35,7 +35,7 @@ function sentinelFmt {
   echo
 
   # Comment on the pull request if necessary.
-  if [ "$GITHUB_EVENT_NAME" == "pull_request" ] && [ "${stlComment}" == "1" ]; then
+  if [ "$GITHUB_EVENT_NAME" == "pull_request" ] && [ "${stlComment}" == "true" ]; then
     fmtComment=""
     for file in ${fmtFileList}; do
       fmtFileDiff=$(sentinel fmt -write=false "${file}" | sed -n '/@@.*/,//{/@@.*/d;p}')
