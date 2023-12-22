@@ -5,7 +5,7 @@
 function sentinelFmt {
   # Gather the output of `sentinel fmt`.
   echo "fmt: info: checking if Sentinel files in ${stlWorkingDir} are correctly formatted"
-  echo "fmt: info: checking if Sentinel files ${*} correctly formatted"
+  echo "fmt: info: checking if Sentinel files ${*} are correctly formatted"
   fmtOutput=$(sentinel fmt -check=true -write=false ${*} 2>&1)
   fmtExitCode=${?}
 

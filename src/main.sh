@@ -87,7 +87,7 @@ function main {
   case "${stlSubcommand}" in
   fmt)
     installSentinel
-    fileList=$(find . -type f -name "*.sentinel" | tr '\n' ' ')
+    fileList=$(find . -type f -maxdepth 1 -name "*.sentinel" -not -path '*/test/*' | tr '\n' ' ')
     sentinelFmt "$fileList"
     ;;
   test)
